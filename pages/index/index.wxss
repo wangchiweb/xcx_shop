@@ -22,7 +22,7 @@
 
 .login {
   width:180px;
-  height: 45px;
-  background: rgb(31, 226, 57);
-  color: aliceblue;
+  height: 42px;
+  background: rgb(7, 240, 38);
+  color: white;
 }
