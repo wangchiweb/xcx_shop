@@ -5,12 +5,13 @@
     "pages/user/user",
     "pages/cart/cart",
     "pages/order/order",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "京东",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -22,6 +23,12 @@
         "selectedIconPath": "/image/home-select.png",
         "pagePath": "pages/index/index",
         "text": "首页"
+      },
+      {
+        "iconPath": "/image/shopcart.png",
+        "selectedIconPath": "/image/shopcart-select.png",
+        "pagePath": "pages/detail/detail",
+        "text": "详情"
       },
       {
         "iconPath": "/image/my.png",

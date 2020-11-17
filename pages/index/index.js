@@ -38,28 +38,28 @@ Page({
   },
   onLoad: function () {
 
-    let _this=this;
+    // let _this=this;
 
-    //发起网络请求
-    wx.request({
-      url: 'http://jd.com/api/test', //仅为示例，并非真实的接口地址
-      data: {
-        x: 'xxx',
-        y: 'yyy'
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success (res) {
-        // console.log(res.data)
-        _this.setData({
-          goods_id :res.data.goods_id,
-          goods_name: res.data.goods_name,
-          price: res.data.price
-        })
+    // //发起网络请求
+    // wx.request({
+    //   url: 'http://jd.com/api/test', //仅为示例，并非真实的接口地址
+    //   data: {
+    //     x: 'xxx',
+    //     y: 'yyy'
+    //   },
+    //   header: {
+    //     'content-type': 'application/json' // 默认值
+    //   },
+    //   success (res) {
+    //     // console.log(res.data)
+    //     _this.setData({
+    //       goods_id :res.data.goods_id,
+    //       goods_name: res.data.goods_name,
+    //       price: res.data.price
+    //     })
         
-      }
-    })
+    //   }
+    // })
 
     if (app.globalData.userInfo) {
       this.setData({

@@ -9,8 +9,8 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
-    <text class="user-motto">微信</text>
-    <text class="user-motto">{{name}}</text>
+    <!-- <text class="user-motto">微信</text>
+    <text class="user-motto">{{name}}</text> -->
     <text class="user-motto">{{sex}}</text>
     <text class="user-motto">{{goods_id}}</text>
     <text class="user-motto">{{goods_name}}</text>
