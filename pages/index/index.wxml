@@ -1,21 +1,36 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-    <!-- <text class="user-motto">微信</text>
-    <text class="user-motto">{{name}}</text> -->
-    <text class="user-motto">{{sex}}</text>
-    <text class="user-motto">{{goods_id}}</text>
-    <text class="user-motto">{{goods_name}}</text>
-    <text class="user-motto">{{price}}</text>
-  </view>
 
-  <button class="login" bindtap="login">登录</button>
+<!-- 轮播图 开始 -->
+<view class="swiper">
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+                <image src="{{item}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+    </swiper>
 </view>
+<!-- 轮播图 结束 -->
+
+<!-- 导航 开始 -->
+<view class="nav">
+    <span class="span">手机</span>
+    <span class="span">电脑</span>
+    <span class="span">水果</span>
+    <span class="span">零食</span>
+</view>
+<!-- 导航 结束 -->
+
+<!-- 商品列表 开始 -->
+<view class="list" wx:for="{{goodsinfo}}" goods_id="{{goodsinfo[index].goods_id}}">
+    <view list-img>
+        <image class="img" src="{{goodsinfo[index].goods_img}}"></image>
+    </view>
+    <view class="content">
+        <view class="name">{{goodsinfo[index].goods_name}}</view>
+        <view class="price">￥{{goodsinfo[index].shop_price}}</view>      
+    </view>
+</view>
+<!-- 商品列表 结束 -->

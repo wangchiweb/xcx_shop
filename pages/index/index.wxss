@@ -26,3 +26,37 @@
   background: rgba(0, 209, 10, 0.753);
   color: white;
 }
+
+.nav    {
+  margin: 12px 4px 12px 4px;
+}
+
+.span    {
+  font-size: 22px;
+  margin-left: 28px;
+}
+
+.list  {
+  float: left;
+}
+
+.img    {
+  width: 120px;
+  height: 120px;
+}
+
+.list-img  {
+  float: left;
+}
+
+.content  {
+  float: left;
+}
+
+.name  {
+  float: left;
+}
+
+.price  {
+  float: left;
+}

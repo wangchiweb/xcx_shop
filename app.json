@@ -11,7 +11,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "京东",
+    "navigationBarTitleText": "首页",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -31,12 +31,6 @@
         "text": "详情"
       },
       {
-        "iconPath": "/image/my.png",
-        "selectedIconPath": "/image/my-select.png",
-        "pagePath": "pages/my/my",
-        "text": "我的"
-      },
-      {
         "iconPath": "/image/shopcart.png",
         "selectedIconPath": "/image/shopcart-select.png",
         "pagePath": "pages/cart/cart",
@@ -47,6 +41,12 @@
         "selectedIconPath": "/image/order-select.png",
         "pagePath": "pages/order/order",
         "text": "订单"
+      },
+      {
+        "iconPath": "/image/my.png",
+        "selectedIconPath": "/image/my-select.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
       }
     ]
   }

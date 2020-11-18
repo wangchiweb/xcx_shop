@@ -14,22 +14,39 @@ Page({
             url: 'http://jd.com/api/login', 
             data: {
               code: res.code
+            },
+            success (res) {
+              // console.log(res.data.data.token);
+              wx.setStorage({
+                key:"token",
+                data:res.data.data.token
+              })
+              let token=wx.getStorage({
+                key: 'token',
+                success (res) {
+                  console.log(res.data)
+                }
+              })
             }
           })
+          
         } else {
           console.log('登录失败！' + res.errMsg)
         }
       }
     })
   },
+  
 
   data: {
-    motto: 'Hello World',
-    name: '张三',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    background: ['/image/discount-banner.jpg', '/image/draw-banner.jpg', '/image/nursing-banner.jpg'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 3000,
+    duration: 500
   },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -38,7 +55,7 @@ Page({
   },
   onLoad: function () {
 
-    // let _this=this;
+    let _this=this;
 
     // //发起网络请求
     // wx.request({
@@ -60,6 +77,18 @@ Page({
         
     //   }
     // })
+
+    //发送网络请求
+    wx.request({
+      url: 'http://jd.com/api/list',
+      success:function(res){
+        // console.log(res.data.data.goodsinfo['1'].goods_id)
+        // console.log(res.data.data.goodsinfo)
+        _this.setData({
+          goodsinfo:res.data.data.goodsinfo
+        })
+      }
+    })
 
     if (app.globalData.userInfo) {
       this.setData({
