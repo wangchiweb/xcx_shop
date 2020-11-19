@@ -36,27 +36,22 @@
   margin-left: 28px;
 }
 
-.list  {
-  float: left;
-}
-
 .img    {
   width: 120px;
   height: 120px;
+  /* float: left; */
 }
 
 .list-img  {
-  float: left;
+  /* width: 120px;
+  height: 120px; */
+  /* float: right; */
 }
 
 .content  {
+  width: 180px;
   float: left;
+  margin-top: 22px;
+  margin-left: 120px;
 }
 
-.name  {
-  float: left;
-}
-
-.price  {
-  float: left;
-}

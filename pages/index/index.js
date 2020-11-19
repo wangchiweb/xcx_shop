@@ -68,7 +68,7 @@ Page({
     // console.log(goods_id);
     //跳转页面
     wx.redirectTo({
-      url: '/pages/detail/detail?goods_id='+goods_id
+      url: '/pages/detail/detail?goods_id='+goods_id,
     })
   },
   
