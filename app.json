@@ -11,7 +11,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "首页",
+    "navigationBarTitleText": "电商",
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
@@ -23,12 +23,6 @@
         "selectedIconPath": "/image/home-select.png",
         "pagePath": "pages/index/index",
         "text": "首页"
-      },
-      {
-        "iconPath": "/image/shopcart.png",
-        "selectedIconPath": "/image/shopcart-select.png",
-        "pagePath": "pages/detail/detail",
-        "text": "详情"
       },
       {
         "iconPath": "/image/shopcart.png",

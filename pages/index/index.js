@@ -3,8 +3,8 @@
 const app = getApp()
 
 Page({
-
-  login: function(res){
+  //点击登录
+  login:function(res){
     // console.log(res);
     wx.login({
       success (res) {
@@ -36,15 +36,62 @@ Page({
       }
     })
   },
-  
 
+  //获取商品列表页的数据
+  getgoodslist:function(){
+      let _this=this;
+      wx.request({
+        url:"http://jd.com/api/list",
+        data:{
+          page:_this.data.page,
+          size:_this.data.pagesize
+        },
+        header: {
+              'content-type': 'application/json' // 默认值
+            },
+        success (res) {
+          // console.log(res.data.data.list);
+          let new_list=_this.data.list.concat(res.data.data.list);
+          // console.log(new_list);    
+          _this.setData({
+            list:new_list
+          })
+        }
+      })
+  },
+
+  //点击商品信息，页面跳转至商品详情页
+  detail:function(res){
+    // console.log(res);
+    //获取商品id
+    let goods_id=res.currentTarget.id;
+    // console.log(goods_id);
+    //跳转页面
+    wx.redirectTo({
+      url: '/pages/detail/detail?goods_id='+goods_id
+    })
+  },
+  
+  //轮播图
   data: {
     background: ['/image/discount-banner.jpg', '/image/draw-banner.jpg', '/image/nursing-banner.jpg'],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
     interval: 3000,
-    duration: 500
+    duration: 500,
+    list:[],
+    page: 1,   //商品列表--页号
+    pagesize: 10,   //商品列表--大小
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom:function(){
+    console.log(123456);
+    this.data.page++;
+    this.getgoodslist();
   },
 
   //事件处理函数
@@ -56,6 +103,9 @@ Page({
   onLoad: function () {
 
     let _this=this;
+    //获取商品列表页的数据
+    _this.getgoodslist();
+
 
     // //发起网络请求
     // wx.request({
@@ -77,18 +127,7 @@ Page({
         
     //   }
     // })
-
-    //发送网络请求
-    wx.request({
-      url: 'http://jd.com/api/list',
-      success:function(res){
-        // console.log(res.data.data.goodsinfo['1'].goods_id)
-        // console.log(res.data.data.goodsinfo)
-        _this.setData({
-          goodsinfo:res.data.data.goodsinfo
-        })
-      }
-    })
+    
 
     if (app.globalData.userInfo) {
       this.setData({
@@ -123,7 +162,6 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true,
-      sex: '男'
     })
   }
 })

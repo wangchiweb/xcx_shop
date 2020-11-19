@@ -5,14 +5,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    background: ['/image/discount-banner.jpg', '/image/draw-banner.jpg', '/image/nursing-banner.jpg'],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 3000,
+    duration: 500,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    /**发送网络请求--根据goods_id获取商品详情页的数据 */
+    
+    //接受商品列表页传过来的商品id
+    let goods_id=options.goods_id;
+    // console.log(goods_id);
+    let _this=this;
+    wx.request({
+      url: 'http://jd.com/api/detail?goods_id='+goods_id,
+      success:function(res){
+        // console.log(res.data.data.detail)
+        _this.setData({
+          detail:res.data.data.detail
+        })
+      }
+    })
   },
 
   /**

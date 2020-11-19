@@ -24,13 +24,13 @@
 <!-- 导航 结束 -->
 
 <!-- 商品列表 开始 -->
-<view class="list" wx:for="{{goodsinfo}}" goods_id="{{goodsinfo[index].goods_id}}">
+<view class="list" wx:for="{{list}}" bindtap="detail" id="{{list[index].goods_id}}">
     <view list-img>
-        <image class="img" src="{{goodsinfo[index].goods_img}}"></image>
+        <image class="img" src="{{list[index].goods_img}}"></image>
     </view>
     <view class="content">
-        <view class="name">{{goodsinfo[index].goods_name}}</view>
-        <view class="price">￥{{goodsinfo[index].shop_price}}</view>      
+        <view class="name">{{list[index].goods_name}}</view>
+        <view class="price">￥{{list[index].shop_price}}</view>      
     </view>
 </view>
 <!-- 商品列表 结束 -->

@@ -1,2 +1,36 @@
 <!--pages/detail/detail.wxml-->
-<text>pages/detail/detail.wxml</text>
+
+
+<!-- 商品详情 开始 -->
+<view class="detail">
+
+
+    <!-- 轮播图 开始 -->
+    <view class="swiper">
+        <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+            <block wx:for="{{background}}" wx:key="*this">
+            <swiper-item>
+                <view class="swiper-item {{item}}">
+                    <image src="{{detail.goods_img}}"></image>
+                </view>
+            </swiper-item>
+            </block>
+        </swiper>
+    </view>
+    <!-- 轮播图 结束 -->
+
+
+
+    <!-- <view detail-img>
+        <image class="img" src="{{detail.goods_img}}"></image>
+    </view> -->
+
+
+
+    <view class="content">
+        <view class="name">{{detail.goods_name}}</view>
+        <view class="price">￥{{detail.shop_price}}</view>      
+    </view>
+</view>
+<!-- 商品详情 结束 -->
