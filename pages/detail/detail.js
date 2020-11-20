@@ -5,12 +5,12 @@ Page({
    * 页面的初始数据
    */
   data: {
-    background: ['/image/discount-banner.jpg', '/image/draw-banner.jpg', '/image/nursing-banner.jpg'],
     indicatorDots: true,
     vertical: false,
     autoplay: true,
     interval: 3000,
     duration: 500,
+    current: 0,
   },
 
   /**
@@ -27,6 +27,7 @@ Page({
       url: 'http://jd.com/api/detail?goods_id='+goods_id,
       success:function(res){
         // console.log(res.data.data.detail)
+        console.log(res)
         _this.setData({
           detail:res.data.data.detail
         })

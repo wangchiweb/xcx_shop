@@ -7,13 +7,11 @@
 
     <!-- 轮播图 开始 -->
     <view class="swiper">
-        <swiper indicator-dots="{{indicatorDots}}"
+        <swiper bindchange="swipperchange" indicator-dots="{{indicatorDots}}"
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-            <block wx:for="{{background}}" wx:key="*this">
+            <block wx:for="{{detail}}" wx:key="*this">
             <swiper-item>
-                <view class="swiper-item {{item}}">
-                    <image src="{{detail.goods_img}}"></image>
-                </view>
+                <image src="{{detail.goods_img}}"></image>
             </swiper-item>
             </block>
         </swiper>
