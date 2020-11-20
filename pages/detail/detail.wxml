@@ -7,11 +7,13 @@
 
     <!-- 轮播图 开始 -->
     <view class="swiper">
-        <swiper bindchange="swipperchange" indicator-dots="{{indicatorDots}}"
+        <swiper indicator-dots="{{indicatorDots}}"
             autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-            <block wx:for="{{detail}}" wx:key="*this">
+            <block wx:for="{{background}}" wx:key="*this">
             <swiper-item>
-                <image src="{{detail.goods_img}}"></image>
+                <view class="swiper-item {{item}}">
+                    <image src="{{detail.goods_img}}"></image>
+                </view>
             </swiper-item>
             </block>
         </swiper>
@@ -32,3 +34,17 @@
     </view>
 </view>
 <!-- 商品详情 结束 -->
+
+<!-- 底部导航 开始 -->
+<view>
+    <view class="">
+        <view class="iconfont icon-shouye">首页</view>
+    </view>
+    <view class="">
+        <view class="iconfont icon-icon_phone_call_">客服</view>
+    </view>
+    <view class="">
+        <view class="iconfont icon-gouwuche">购物车</view>
+    </view>
+</view>
+<!-- 底部导航 结束 -->
