@@ -48,8 +48,10 @@ Page({
   /**
    * 加入购物车
    */
-  addcart:function(data){
+  addcart:function(res){
+    // console.log(res);
     let goods_id=res.currentTarget.id;
+    // console.log(goods_id);
     let access_token=wx.getStorageSync('key');
     // console.log(access_token);
 
