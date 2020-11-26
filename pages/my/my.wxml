@@ -1,2 +1,4 @@
 <!--pages/my/my.wxml-->
 <text>pages/my/my.wxml</text>
+
+<button bindtap="login" open-type="getUserInfo" bindgetuserinfo="userinfo"> 登录 </button>

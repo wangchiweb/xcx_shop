@@ -1,2 +1,13 @@
 <!--pages/cart/cart.wxml-->
-<text>pages/cart/cart.wxml</text>
+<!-- 购物车商品列表 开始 -->
+<view class="list" wx:for="{{cartlist}}">
+    <view list-img>
+        <image class="img" src="{{cartlist[index].goods_img}}"></image>
+    </view>
+    <view class="content">
+        <view class="id">[{{cartlist[index].goods_id}}]</view>
+        <view class="name">{{cartlist[index].goods_name}}</view>
+        <view class="price">￥{{cartlist[index].cart_price}}</view>      
+    </view>
+</view>
+<!-- 购物车商品列表 结束 -->

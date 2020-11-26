@@ -29,6 +29,7 @@
         <image class="img" src="{{list[index].goods_img}}"></image>
     </view>
     <view class="content">
+        <view class="id">[{{list[index].goods_id}}]</view>
         <view class="name">{{list[index].goods_name}}</view>
         <view class="price">￥{{list[index].shop_price}}</view>      
     </view>

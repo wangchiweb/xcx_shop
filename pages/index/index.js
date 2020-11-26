@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const apihost = app.globalData.apiUrl;  //本地
 
 Page({
   //点击登录
@@ -11,22 +12,17 @@ Page({
         if (res.code) {
           //发起网络请求
           wx.request({
-            url: 'http://jd.com/api/login', 
+            url: ''+apihost+'/api/login', 
+            method: 'post',
             data: {
               code: res.code
             },
             success (res) {
               // console.log(res.data.data.token);
-              wx.setStorage({
-                key:"token",
-                data:res.data.data.token
-              })
-              let token=wx.getStorage({
-                key: 'token',
-                success (res) {
-                  console.log(res.data)
-                }
-              })
+              wx.setStorageSync('key',res.data.data.token);
+              let value=wx.getStorageSync('key');
+              // console.log(value); 
+              
             }
           })
           
@@ -41,7 +37,7 @@ Page({
   getgoodslist:function(){
       let _this=this;
       wx.request({
-        url:"http://jd.com/api/list",
+        url:""+apihost+"/api/list",
         data:{
           page:_this.data.page,
           size:_this.data.pagesize
@@ -105,11 +101,12 @@ Page({
     let _this=this;
     //获取商品列表页的数据
     _this.getgoodslist();
+    _this.login();
 
 
     // //发起网络请求
     // wx.request({
-    //   url: 'http://jd.com/api/test', //仅为示例，并非真实的接口地址
+    //   url: ''+apihost+'/api/test', //仅为示例，并非真实的接口地址
     //   data: {
     //     x: 'xxx',
     //     y: 'yyy'

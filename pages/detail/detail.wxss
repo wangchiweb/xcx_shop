@@ -1,1 +1,78 @@
 /* pages/detail/detail.wxss */
+
+
+.goods-info {
+    margin-top: 50rpx;
+    margin-left:50rpx;
+    margin-bottom: 100rpx;
+}
+
+.goods-info .name{
+    margin-top: 15rpx;
+}
+
+.goods-info .price{
+    color: #fc0;
+    margin-top: 30rpx;
+}
+
+.goods-info .goods-share {
+    display: flex;
+    height: 60rpx;
+}
+
+
+.goods-info .goods-share .btn-share {
+    width: 100rpx;
+    padding: 8px 0;
+    margin-right: 10rpx;
+    background-color: #fff;
+}
+
+
+.bottom-nav {
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.bottom-nav .iconfont
+{
+    font-size:25px;
+}
+
+.bottom-nav .nav-icon
+{
+    background-color:#eeeeee;
+    flex: 0.5;
+    text-align: center;
+}
+
+.bottom-nav .nav-addcart {
+    flex: 1;
+    line-height: 120rpx;
+    text-align: center;
+    background-color: orange;
+    color: #fff;
+}
+
+.bottom-nav .nav-buynow {
+    flex: 0.8;
+    line-height: 120rpx;
+    text-align: center;
+    background-color: #ffcc00;
+    color: #fff;
+
+}
+
+.desc-box {
+    padding: 15rpx;
+}
+
+.desc-box image {
+    width: 100%;
+    display: block;
+}

@@ -4,47 +4,46 @@
 <!-- 商品详情 开始 -->
 <view class="detail">
 
-
     <!-- 轮播图 开始 -->
-    <view class="swiper">
-        <swiper indicator-dots="{{indicatorDots}}"
-            autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-            <block wx:for="{{background}}" wx:key="*this">
-            <swiper-item>
-                <view class="swiper-item {{item}}">
-                    <image src="{{detail.goods_img}}"></image>
-                </view>
-            </swiper-item>
-            </block>
-        </swiper>
-    </view>
+    <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{detail}}" wx:key="*this">
+          <swiper-item>
+            <view class="swiper-item {{item}}">
+                <image src="{{detail.goods_img}}"></image>
+            </view>
+          </swiper-item>
+        </block>
+    </swiper>
     <!-- 轮播图 结束 -->
 
-
-
-    <!-- <view detail-img>
-        <image class="img" src="{{detail.goods_img}}"></image>
-    </view> -->
-
-
-
-    <view class="content">
-        <view class="name">{{detail.goods_name}}</view>
-        <view class="price">￥{{detail.shop_price}}</view>      
+    <view class="goods-info">
+        <view class="price">¥ {{detail.shop_price}}</view>
+        <!-- 收藏 开始 -->
+        <view class="iconfont icon-duomeitiicon-" bindtap="Collection" id="{{detail.goods_id}}"></view>   
+        <!-- 收藏 结束 -->
+        <view class="goods-share">
+            <view class="name">{{detail.goods_name}}</view>
+        </view>
     </view>
 </view>
 <!-- 商品详情 结束 -->
 
 <!-- 底部导航 开始 -->
-<view>
-    <view class="">
-        <view class="iconfont icon-shouye">首页</view>
+<view class="bottom-nav">
+    <view class="nav-icon">
+        <view class="iconfont icon-shouye2" bindtap="switchindex"></view>
+        <view> 首页 </view>
     </view>
-    <view class="">
-        <view class="iconfont icon-icon_phone_call_">客服</view>
+    <view class="nav-icon" bindtap="makecall">
+        <view class="iconfont icon-dianhua-1"></view>
+        <view> 客服 </view>
     </view>
-    <view class="">
-        <view class="iconfont icon-gouwuche">购物车</view>
+    <view class="nav-icon">
+        <view class="iconfont icon-gouwuche2" bindtap="switchcart"></view>
+        <view> 购物车 </view>
     </view>
+    <view class="nav-addcart" id="{{detail.goods_id}}" bindtap="addcart">加入购物车</view>
+    <view class="nav-buynow">立即购买</view>
 </view>
 <!-- 底部导航 结束 -->

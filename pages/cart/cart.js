@@ -1,4 +1,8 @@
 // pages/cart/cart.js
+//获取应用实例
+const app = getApp()
+const apihost = app.globalData.apiUrl;  //本地
+
 Page({
 
   /**
@@ -12,7 +16,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    //获取购物车商品列表
+    this.getcartlist();
   },
 
   /**
@@ -62,5 +67,24 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  /**
+   * 获取购物车商品列表
+   */
+  getcartlist:function(){
+    let _this=this;
+    let access_token=wx.getStorageSync('key');
+    // console.log(access_token);
+    wx.request({
+      url: apihost+'/api/cartlist?access_token='+access_token,
+      success:function(res){
+        // console.log(res)
+        //  console.log(res.data.data.cartlist)
+        _this.setData({
+          cartlist:res.data.data.cartlist
+        })
+      }
+    })
   }
 })
