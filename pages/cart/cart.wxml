@@ -1,13 +1,49 @@
 <!--pages/cart/cart.wxml-->
-<!-- 购物车商品列表 开始 -->
-<view class="list" wx:for="{{cartlist}}">
-    <view list-img>
-        <image class="img" src="{{cartlist[index].goods_img}}"></image>
-    </view>
-    <view class="content">
-        <view class="id">[{{cartlist[index].goods_id}}]</view>
+<view class="page">
+  <!-- 购物车头部 开始 -->
+  <view class="cart-top">
+    <view class="top-left">共一件商品</view>
+    <view class="top-right">删除</view>
+  </view>
+  <!-- 购物车头部 结束 -->
+
+  <!-- 购物车列表 开始 -->
+  <view class="cart-list">
+    <view class="list" wx:for="{{cartlist}}">
+      <checkbox-group>
+        <checkbox value="1" checked="{{cartlist[index].checked}}"></checkbox>
+      </checkbox-group>
+      <view class="img">
+        <image src="{{cartlist[index].goods_img}}"></image>
+      </view>
+      <view class="content">
         <view class="name">{{cartlist[index].goods_name}}</view>
-        <view class="price">￥{{cartlist[index].cart_price}}</view>      
+        <view class="brand">品牌</view>
+        <view class="goods-price">
+          <view class="price">￥{{cartlist[index].cart_price}}</view>
+          <view class="number">
+            <view class="decr">-</view>
+            <input value="{{cartlist[index].goods_num}}"></input>
+            <view class="incr">+</view>
+          </view>
+        </view>
+      </view>
     </view>
+  </view>
+  <!-- 购物车列表 结束 -->
+
+  <!-- 购物车底部 开始 -->
+  <view class="cart-bottom">
+    <view class="all">
+      <checkbox-group bindchange="selectall">
+        <checkbox value="1" checked=""></checkbox>
+        <text>全选</text>
+      </checkbox-group>
+    </view>
+    <view class="total-price">
+      总价：<text class="price">￥8888.9</text>
+    </view>
+    <view class="settlement">去结算</view>
+  </view>
+  <!-- 购物车底部 结束 -->
 </view>
-<!-- 购物车商品列表 结束 -->

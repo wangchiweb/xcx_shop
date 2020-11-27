@@ -35,7 +35,7 @@ App({
   },
   globalData: {
     userInfo: null,
-    apiUrl: 'http://jd.com/',   //本地
-    // apiUrl: 'https://2004wch.comcto.com',   //线上
+    // apiUrl: 'http://jd.com/',   //本地
+    apiUrl: 'https://2004wch.comcto.com',   //线上
   }
 })

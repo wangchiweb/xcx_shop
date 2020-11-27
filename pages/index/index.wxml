@@ -25,8 +25,8 @@
 
 <!-- 商品列表 开始 -->
 <view class="list" wx:for="{{list}}" bindtap="detail" id="{{list[index].goods_id}}">
-    <view list-img>
-        <image class="img" src="{{list[index].goods_img}}"></image>
+    <view class="img">
+        <image src="{{list[index].goods_img}}"></image>
     </view>
     <view class="content">
         <view class="id">[{{list[index].goods_id}}]</view>
